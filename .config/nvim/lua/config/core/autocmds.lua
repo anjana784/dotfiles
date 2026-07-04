@@ -20,3 +20,12 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   desc = "Convert tabs to spaces on file open",
 })
 
+-- Set winbar to show project-relative file path
+-- Uses a dynamic %{v:lua...} expression so it updates automatically per-window
+vim.api.nvim_create_autocmd({ "BufEnter", "WinNew" }, {
+  desc = "Set winbar with project-relative path",
+  callback = function()
+    vim.wo.winbar = "%{%v:lua.require('config.core.winbar').get_relative_path()%}"
+  end,
+})
+
