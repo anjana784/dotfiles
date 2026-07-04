@@ -13,6 +13,8 @@
 !.zprofile
 !.gitconfig
 !.tmux.conf
+!README.md
+!.secrets.template
 
 # --- .config directory ---
 !.config/
@@ -30,3 +32,6 @@
 !.config/nvim/lazy-lock.json
 !.config/nvim/lua/
 !.config/nvim/lua/**
+
+# --- Always ignore these even if whitelisted above ---
+.DS_Store
