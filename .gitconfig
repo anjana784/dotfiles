@@ -1,0 +1,7 @@
+[user]
+	name = anjana784
+	email = hello@anjana784.dev
+[init]
+	defaultBranch = main 
+[http]
+	postBuffer = 524288000

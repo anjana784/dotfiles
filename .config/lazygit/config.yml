@@ -1,0 +1,35 @@
+# Lazygit configuration
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#7aa2f7"
+      - bold
+    inactiveBorderColor:
+      - "#565f89"
+    selectedLineBgColor:
+      - "#2d3f76"
+    selectedRangeBgColor:
+      - "#2d3f76"
+
+git:
+  paging:
+    colorArg: always
+    pager: ""
+
+# Open files in the existing Neovim instance (not a nested nvim)
+# Requires $NVIM to be set — lazygit.nvim does this automatically
+os:
+  editPreset: "nvim-remote"
+
+# Confirm on quit only when files are staged
+confirmOnQuit: true
+
+# Custom commands for convenience
+customCommands:
+  - key: "<c-g>"
+    context: "files"
+    command: 'nvim --server "$NVIM" --remote-send "<C-\\><C-N>:LazyGitCurrentFile<CR>"'
+    description: "Open current file in Neovim"

@@ -1,0 +1,121 @@
+# ~/.config/starship.toml
+
+# -------------------------------------------
+# 1. GLOBAL SETTINGS
+# -------------------------------------------
+# Use the Catppuccin Mocha Palette
+palette = "catppuccin_mocha"
+add_newline = true
+
+# -------------------------------------------
+# 2. LAYOUT (FORMAT)
+# -------------------------------------------
+# We place $os first so the Apple icon appears before the directory.
+format = """
+[╭─ ](bold overlay0)$os\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$golang\
+$line_break\
+$character
+"""
+
+# -------------------------------------------
+# 3. MODULES
+# -------------------------------------------
+
+# [OS] - The Apple Icon on the first line
+[os]
+disabled = false
+style = "bold white"
+
+[os.symbols]
+Macos = " "      # This is the Nerd Font specific Apple logo
+Windows = " "
+Linux = " "
+
+# [Directory] - The path
+[directory]
+style = "bold lavender"
+# 1. Disable Git repo truncation so it doesn't hide the path in repos
+truncate_to_repo = false
+# 2. Set a high number to show the full path (e.g., ~/Projects/Web/blog...)
+truncation_length = 10
+truncation_symbol = "…/"
+# Ensure the home folder is represented by ~
+home_symbol = "~"
+read_only = " 🔒"
+
+# [Character] - The arrow on the second line
+[character]
+# We add the bottom connector "╰─ " before the arrow
+success_symbol = "[╰─](bold overlay0) [➜](bold green)"
+error_symbol = "[╰─](bold overlay0) [✗](bold red)"
+
+# [Git]
+[git_branch]
+symbol = " "
+style = "bold mauve"
+
+[git_status]
+style = "bold red"
+conflicted = "🏳"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = "[++($count)](green)"
+
+# [Languages]
+[nodejs]
+symbol = " "
+style = "green"
+
+[python]
+symbol = "🐍 "
+style = "yellow"
+
+[rust]
+symbol = "🦀 "
+style = "orange"
+
+[golang]
+symbol = "🐹 "
+style = "cyan"
+
+# -------------------------------------------
+# 4. PALETTE (Catppuccin Mocha)
+# -------------------------------------------
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

@@ -1,0 +1,32 @@
+# ~/.gitignore — Dotfiles bare repo
+#
+# This uses a whitelist approach: ignore everything (*),
+# then un-ignore only the files we intentionally track.
+# Use `dotfiles add <file>` to add new files.
+
+# Ignore everything by default
+*
+
+# --- Tracked dotfiles ---
+!.gitignore
+!.zshrc
+!.zprofile
+!.gitconfig
+!.tmux.conf
+
+# --- .config directory ---
+!.config/
+!.config/starship.toml
+!.config/ghostty/
+!.config/ghostty/config
+!.config/karabiner/
+!.config/karabiner/karabiner.json
+!.config/lazygit/
+!.config/lazygit/config.yml
+!.config/git/
+!.config/git/ignore
+!.config/nvim/
+!.config/nvim/init.lua
+!.config/nvim/lazy-lock.json
+!.config/nvim/lua/
+!.config/nvim/lua/**
