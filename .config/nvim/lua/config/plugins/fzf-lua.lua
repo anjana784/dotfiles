@@ -1,7 +1,14 @@
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	opts = {},
+	opts = {
+		files = {
+			fd_opts = [[--exclude node_modules --exclude .next --exclude .git]],
+		},
+		grep = {
+			rg_opts = [[--glob '!.next' --glob '!node_modules' --hidden]],
+		},
+	},
 	keys = {
 		{
 			"<leader>ff",
