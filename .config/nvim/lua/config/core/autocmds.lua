@@ -29,3 +29,16 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinNew" }, {
   end,
 })
 
+-- Markdown: enable line wrapping for comfortable reading
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  desc = "Enable word-wrapped lines and render-markdown friendly options for markdown files",
+  callback = function()
+    vim.wo.wrap = true
+    vim.wo.linebreak = true
+    vim.wo.breakindent = true
+    vim.wo.conceallevel = 2
+    vim.wo.concealcursor = "nvc"
+  end,
+})
+
