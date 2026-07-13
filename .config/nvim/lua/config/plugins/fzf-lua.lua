@@ -2,8 +2,15 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
-		files = {
-			fd_opts = [[--exclude node_modules --exclude .next --exclude .git]],
+		defaults = {
+			-- Lua patterns matched against relative file paths — works across
+			-- all file providers (git, fd, find) and grep
+			file_ignore_patterns = {
+				"node_modules/",
+				"%.next/",
+				"%.git/",
+				"%.jj/",
+			},
 		},
 		grep = {
 			rg_opts = [[--glob '!.next' --glob '!node_modules' --hidden]],
