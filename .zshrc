@@ -58,7 +58,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/Library/Python/3.9/bin:$PATH"
 
 # Source secrets file if it exists
 [ -f ~/.secrets ] && source ~/.secrets
@@ -69,3 +69,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Dotfiles bare repo management
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+
+export PATH="$PATH:$HOME/go/bin"
