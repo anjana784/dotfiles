@@ -77,6 +77,12 @@ return {
         web = { pattern = "^http", icon = "󰖟 " },
       },
     },
+    -- Images: render inline using image.nvim backend
+    image = {
+      enabled = true,
+      only_render_image_at_cursor = false,
+      max_file_size = 10, -- MB
+    },
     -- Window-local options for rendered view
     win_options = {
       conceallevel = {

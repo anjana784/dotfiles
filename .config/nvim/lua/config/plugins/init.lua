@@ -23,6 +23,7 @@ vim.g.mapleader = " "
 require("lazy").setup({
 	spec = {
 		-- import your plugins
+		{ import = "config.plugins.image" },
 		{ import = "config.plugins.render-markdown" },
 		{ import = "config.plugins.guess-indent" },
 		{ import = "config.plugins.tokyo_night" },
