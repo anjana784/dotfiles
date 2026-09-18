@@ -60,6 +60,7 @@ esac
 # pnpm end
 export PATH="$HOME/.local/bin:$HOME/Library/Python/3.9/bin:$PATH"
 
+
 # Source secrets file if it exists
 [ -f ~/.secrets ] && source ~/.secrets
 
@@ -72,3 +73,13 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 
 export PATH="$PATH:$HOME/go/bin"
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Android SDK Environment Variables
+export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+alias start-android-emulator='emulator -avd android-emulator'
